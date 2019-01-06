@@ -11,7 +11,8 @@ public:
         for (int i = 0; i < nums.size(); i++) {
                 int x = target - nums[i];
 
-                if (map.count(x) && map[x] != i) {
+    /* not itself */
+                if (map.count(x) && (map[x] != i)) {
                         res.push_back(i);
                         res.push_back(map[x]);
                         break;
