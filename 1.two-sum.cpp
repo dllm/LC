@@ -1,23 +1,23 @@
 class Solution {
-public:
-    vector<int> twoSum(const vector<int>& nums, int target) {
-        unordered_map <int, int> map;
-        vector<int> res;
+    public:
+        vector<int> twoSum(const vector<int>& nums, int target) {
+            unordered_map <int, int> map;
+            vector<int> res;
 
-        for (int i = 0; i < nums.size(); i++) {
+            for (int i = 0; i < nums.size(); i++) {
                 map[nums[i]] = i;
-        }
+            }
 
-        for (int i = 0; i < nums.size(); i++) {
+            for (int i = 0; i < nums.size(); i++) {
                 int x = target - nums[i];
 
-    /* not itself */
+                /* not itself */
                 if (map.count(x) && (map[x] != i)) {
-                        res.push_back(i);
-                        res.push_back(map[x]);
-                        break;
+                    res.push_back(i);
+                    res.push_back(map[x]);
+                    break;
                 }
+            }
+            return res;
         }
-        return res;
-    }
 };
